@@ -1,0 +1,86 @@
+{%extends 'administration/doctor_layout.html'%}
+    {% load static %}
+
+{%block content%}
+
+<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Doctor Settings</h1>
+                
+            </div>
+        </div>
+
+    </div><br>
+   <!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+    <div id="doctor-page" class="layer-stretch">
+         <form name="form" method="post" action="{% url 'administration:doctor_settings'%}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="theme-material-card">
+                <img src="{{doc_update.photo.url}}"  style="width:250px;height: 250px"> <br>
+            <h4 style="display: inline">Name : </h4><h4 style="display: inline">{{doc_update.username}}</h4><br>
+            <h4 style="display: inline">Licence no : </h4><h4 style="display: inline">{{doc_update.regno}}</h4><br>
+            <h4 style="display: inline">Specialization : </h3><h4 style="display: inline">{{doc_update.specialization}}</h3><br>
+            <h4 style="display: inline">Email : </h3><h4 style="display: inline">{{doc_update.email}}</h3><br>
+            <h4 style="display: inline">Phone : </h3><h4 style="display: inline">{{doc_update.phone}}</h3><br>
+            <h4 style="display: inline">Place : </h3><h4 style="display: inline">{{doc_update.place}}</h3><br><br>
+                <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'administration:edit_doc' doc_update.login_id %}"><span class="badge badge-success">Edit</span></a>
+                </div>
+         <div class="theme-material-card">
+                        <div class="sub-ttl">Week Settings</div>
+                        <ul class="timetable" style="width: 550px;">
+                            <li><a class="pull-left"><i class="fa fa-calendar"></i>Monday</a><a class="pull-right"><input type="checkbox" name="mon" value="0"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-calendar"></i>Tueday</a><a class="pull-right"><input type="checkbox" name="tue" value="1"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-calendar"></i>Wednesday</a><a class="pull-right"><input type="checkbox" name="wed" value="2"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-calendar"></i>Thursday</a><a class="pull-right"><input type="checkbox" name="thu" value="3"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-calendar"></i>Friday</a><a class="pull-right"><input type="checkbox" name="fri" value="4"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-calendar"></i>Saturday</a><a class="pull-right"><input type="checkbox" name="sat" value="5"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-calendar"></i>Sunday</a><a class="pull-right"><input type="checkbox" name="sun" value="6"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-calendar"></i>Consultaion Fees &nbsp;</a><input type="text" name="consul_fee" value="{{doc_update.consolt_fee}}" maxlength="4"></li>
+                            <li style="display: none"><a class="pull-left"><i class="fa fa-calendar"></i>Appointment Limit &nbsp;</a><input type="text" name="app_limit" value="{{doc_update.appoint_limit}}"></li>
+                        </ul>
+                         
+            
+                    </div>
+                    <div class="theme-material-card">
+                        <div class="sub-ttl">Time Settings</div>
+                        <ul class="timetable" style="width: 550px;">
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>9:00-10:00</a><a class="pull-right"><input type="checkbox"  name="slot1" value="0"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>10:00-11:00</a><a class="pull-right"><input type="checkbox" name="slot2" value="1"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>11:00-12:00</a><a class="pull-right"><input type="checkbox" name="slot3" value="2"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>12:00-1:00</a><a class="pull-right"><input type="checkbox"  name="slot4" value="3"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>1:00-2:00</a><a class="pull-right"><input type="checkbox"   name="slot5" value="4"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>2:00-3:00</a><a class="pull-right"><input type="checkbox"   name="slot6" value="5"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>3:00-4:00</a><a class="pull-right"><input type="checkbox"   name="slot7" value="6"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>4:00-5:00</a><a class="pull-right"><input type="checkbox"   name="slot8" value="7"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>5:00-6:00</a><a class="pull-right"><input type="checkbox"   name="slot9" value="8"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>6:00-7:00</a><a class="pull-right"><input type="checkbox"   name="slot10" value="9"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>7:00-8:00</a><a class="pull-right"><input type="checkbox"   name="slot11" value="10"></a></li>
+                            <li><a class="pull-left"><i class="fa fa-clock-o"></i>8:00-9:00</a><a class="pull-right"><input type="checkbox"   name="slot12" value="11"></a></li>
+                           
+                        </ul>
+                        
+                    </div>
+                     <div class="form-submit">
+                    <input type="submit" id="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary" value="Save">
+
+                </div><br>
+            </form>
+
+                </div>
+
+        </div>
+
+                </div>
+
+
+        </div>
+
+            </div>
+        </div><!-- End main Footer Section -->
+        <!-- Start Copyright Section -->
+        
+     {%endblock%}

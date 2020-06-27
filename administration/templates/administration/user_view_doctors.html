@@ -1,0 +1,61 @@
+{%extends 'administration/user_layout.html'%}
+    {% load static %}
+
+{%block content%}<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>View Doctors</h1>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="theme-material-card"> <div id="doctor-page" class="layer-stretch">
+                          
+                                                       <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Sl.No</th>
+                                        <th>Name</th>
+                                        <th>Phone number</th>
+                                        <th>Place</th>
+                                        <th>Specialization</th>
+                                        <th>Book</th>
+                                        <th>Profile</th>
+                                        <th>Review and rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for x in details %}
+                                  
+
+                                    <tr>
+                                        <td>{{forloop.counter}}</td>
+                                        <td>Dr. {{x.username}}</td>
+                                        <td>{{x.phone}}</td>
+                                        <td>{{x.place}}</td>
+                                        <td>{{x.specialization}}</td>
+                                        <td><a href="{% url 'administration:user_make_booking' x.id %}">Book Now</a></td>
+                                        <td><a href="{% url 'administration:doc_profile' x.id %}">Profile</a></td>
+                                         <td><a href="{% url 'administration:rate' x.id %}">Review & Rate</a></td>
+                                    </tr>
+                                 
+                                    {% endfor %}
+                                    
+                                </tbody>
+                            </table>
+
+
+                       
+                            
+                        </div><!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+   
+        </div>
+            </div>
+        </div><!-- End main Footer Section -->
+        <!-- Start Copyright Section -->
+        
+          {%endblock%}

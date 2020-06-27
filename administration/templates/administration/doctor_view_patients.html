@@ -1,0 +1,49 @@
+
+{%extends 'administration/doctor_layout.html'%}
+    {% load static %}
+
+{%block content%}<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Patients Prescriptions</h1>
+                
+            </div>
+        </div>
+
+    </div>
+     <div id="doctor-page" class="layer-stretch">
+    <div class="theme-material-card">
+                            <p class="font-16">Patients list</p>
+                                                       <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Date</th>
+                                        
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     {% for a,b,c in zippy %}
+                                    <tr>
+                                        <td>{{forloop.counter}}</td>
+                                        <td>{{a}}</td>
+                                        <td>{{b}}</td>
+                                        <td><a href="{% url 'administration:doctor_view_prescription' c %}">View Prescriptions</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                     
+                                </tbody>
+                            </table>
+                        </div><!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+   
+        </div>
+            </div>
+        </div><!-- End main Footer Section -->
+        <!-- Start Copyright Section -->
+       
+       {%endblock%}

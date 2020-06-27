@@ -1,0 +1,77 @@
+{%extends 'administration/sidebar_layout.html'%}
+    {% load static %}
+
+{%block content%}
+
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Doctor Details</h1>
+               
+            </div>
+        </div>
+    </div><!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+
+       
+
+               <!--Form-->
+             <div class="theme-material-card">
+                            <p class="font-16">Doctor Details</p>
+                            
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Specialization</th>
+                                        <th>Place</th>
+                                        <th>Registration no</th>
+                                        <th>consultaion fees</th>
+                                        <th>Phone</th>
+
+                                        <th>E-mail</th>
+
+
+
+                                        <th>Approval</th>
+                                        <th></th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     {% for x in details %}
+                                        
+
+                                   
+                                   
+                                    <tr>
+                                        <td>{{forloop.counter}}</td>
+                                        <td>{{x.username}}</td>
+                                        <td>{{x.specialization}}</td>
+                                        <td>{{x.place}}</td>
+                                        <td>{{x.regno}}</td>
+                                        <td>{{x.consolt_fee}}</td>
+                                        <td>{{x.phone}}</td>
+                                        <td>{{x.email}}</td>
+                                        {% if x.approval == 'no' %}
+                                        <td><a href="{% url 'administration:doc_approval' x.id %}"><span class="badge badge-success">Approve</span></a></td>
+                                        {% endif %}
+                                        {% if x.approval == 'yes' %}
+                                        <td><a href="{% url 'administration:doc_disapproval' x.id %}"><span class="badge badge-danger">Disapprove</span></a></td>
+                                        {% endif %}
+                                       
+                                        <td><a href="{% url 'administration:delete_doc' x.id %}">Delete</a></td>
+                                    </tr>
+                                    
+                                      
+                                        {% endfor %}
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+            </div>
+        </div>
+    </div>
+    {%endblock%}

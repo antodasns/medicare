@@ -1,0 +1,47 @@
+{%extends 'administration/user_layout.html'%}
+    {% load static %}
+
+{%block content%}
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Doctors Booking</h1>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="doctor-page" class="layer-stretch">
+         <form name="form" method="post" action="{% url 'administration:user_create_appointment'%}" enctype="multipart/form-data">
+            {% csrf_token %}
+         <div class="theme-material-card">
+                        <div class="sub-ttl">Booking</div>
+                     
+                           <input type="text" name="id" value="{{id}}" style="display: none">
+                           <input type="text" name="consul_fees" value="{{consol_fee}}" style="display: none"></h5>
+                            <h5>Consultaion Fees : &nbsp;<input type="text" name="consul_fee" value="{{consol_fee}}" disabled></h5><br>
+                            
+                            <h5>Select Date : &nbsp;<input type="text" name="selected_date" id="datepicker"/ placeholder="Date" autocomplete="off"></h5><br>
+                           <h5>Select Time Slot : &nbsp;<select name="slot">
+                             {{tag_slot_option|safe}}
+                           </select></h5><br>
+                       
+                         <div class="form-submit">
+                    <input type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary" value="Confirm Booking">
+
+                </div>
+            </form>
+                    </div>
+
+                </div>
+
+        </div>
+            </div>
+        </div>
+       {{script_tag|safe}}
+          {%endblock%}

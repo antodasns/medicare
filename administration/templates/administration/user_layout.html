@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Site Title -->
+    <title>Klinik health care - HTML5 &#38; CSS3 Template for Clinic and Hospital</title>
+    <!-- Meta Description Tag -->
+    <meta name="Description" content="Klinik is a HTML5 & CSS3 responsive template">
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/x-icon" href="{%static 'images/favicon.png" />
+    <!-- Font Awesoeme Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'font-awesome/css/font-awesome.min.css'%}" />
+    <!-- Google web Font -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,500">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <!-- Material Design Lite Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/material.min.css'%}" />
+    <!-- Material Design Select Field Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/mdl-selectfield.min.css'%}">
+    <!-- Owl Carousel Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}" />
+    <!-- Animate Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/animate.min.css'%}" />
+    <!-- Magnific Popup Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.css'%}" />
+    <!-- Flex Slider Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/flexslider.css'%}" />
+    <!-- Custom Main Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'sweetalert/sweetalert.css' %}">
+     <script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</head>
+<body>
+    <!-- Start Header -->
+    <header id="header">
+        <!-- Start Header Top Section -->
+        <div id="hdr-top-wrapper">
+            <div class="layer-stretch hdr-top">
+                <div class="hdr-top-block hidden-xs">
+                    
+                </div>
+                <div class="hdr-top-line hidden-xs"></div>
+                <div class="hdr-top-block hdr-number">
+                  
+                </div>
+                <div class="hdr-top-line"></div>
+                 <div class="hdr-top-block">
+                    <div class="theme-dropdown">
+                        <button onclick="goBack()">Go Back</button></a>
+                       
+                    </div>
+                </div>
+                <div class="hdr-top-block">
+                    <div class="theme-dropdown">
+                        <a id="profile-menu" class="mdl-button mdl-js-button mdl-js-ripple-effect font-13"><i class="fa fa-user-o color-black"></i> My Account</a>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect metarial-menu" data-mdl-for="profile-menu">
+                            <!-- <li class="mdl-menu__item"><i class="fa fa-user-circle-o"></i>{{user_detail.username}}</a></li>
+                            <li class="mdl-menu__item"><i class="fa fa-envelope"></i>{{user_detail.email}}</a></li> -->
+                            <li class="mdl-menu__item"><a href="{% url 'administration:user_logout'%}"><i class="fa fa-sign-in"></i>Logout</a></li>
+                          
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- End Header Top Section -->
+        <!-- Start Main Header Section -->
+        <div id="hdr-wrapper">
+            <div class="layer-stretch hdr">
+                <div class="tbl">
+                    <div class="tbl-row">
+                        <!-- Start Header Logo Section -->
+                        <!-- End Header Logo Section -->
+                        <div class="tbl-cell hdr-menu">
+                            <!-- Start Menu Section -->
+                            <ul class="menu" style="text-align: center;">
+                               <form name="form" method="post" action="{% url 'administration:doctor_search'%}" enctype="multipart/form-data">
+                {% csrf_token %}
+                               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input is-upgraded" data-upgraded=",MaterialTextfield">
+                            <input class="mdl-textfield__input" type="text" id="sidebar-search" name="search">
+                            <!-- <label class="mdl-textfield__label" for="sidebar-search">Enter Any Department</label> -->
+                            <button class="fa fa-search search-button"></button>
+                        </div>
+                    </form>
+                    <li>
+                                    <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'administration:index'%}">Home<i class="fa fa-chevron"></i></a>
+                                  
+                                </li>
+                                <li>
+                                    <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'administration:user_view_doctors'%}">View Doctors<i class="fa fa-chevron"></i></a>
+                                  
+                                </li>
+                                <li>
+                                    <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'administration:user_view_bookings'%}">View Bookings <i class="fa fa-chevron"></i></a>
+                                  
+                                </li>
+                                <li>
+                                    <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'administration:user_view_prescribed_doctors'%}">View Prescription<i class="fa fa-chevron"></i></a>
+                                  
+                                </li>
+                                <li>
+                                    <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'administration:user_view_results'%}">Results<i class="fa fa-chevron"></i></a>
+                                  
+                                </li>
+                                 <li>
+                                    <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'administration:user_profiles'%}">View profile<i class="fa fa-chevron"></i></a>
+                                  
+                                </li>
+                               
+                                  
+                                
+            </div>
+        </div><!-- End Main Header Section -->
+
+    </header>
+        {%block content%}
+
+
+          {%endblock%}
+
+          </footer><!-- End of Footer Section -->
+
+    <!-- **********Included Scripts*********** -->
+
+    <!-- Jquery Library 2.1 JavaScript-->
+    <script src="{%static 'js/jquery-2.1.4.min.js'%}"></script>
+    <!-- Popper JavaScript-->
+    <script src="{%static 'js/popper.min.js'%}"></script>
+    <!-- Bootstrap Core JavaScript-->
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+    <!-- Material Design Lite JavaScript-->
+    <script src="{%static 'js/material.min.js'%}"></script>
+    <!-- Material Select Field Script -->
+    <script src="{%static 'js/mdl-selectfield.min.js'%}"></script>
+    <!-- Flexslider Plugin JavaScript-->
+    <script src="{%static 'js/jquery.flexslider.min.js'%}"></script>
+    <!-- Owl Carousel Plugin JavaScript-->
+    <script src="{%static 'js/owl.carousel.min.js'%}"></script>
+    <!-- Scrolltofixed Plugin JavaScript-->
+    <script src="{%static 'js/jquery-scrolltofixed.min.js'%}"></script>
+    <!-- Magnific Popup Plugin JavaScript-->
+    <script src="{%static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <!-- WayPoint Plugin JavaScript-->
+    <script src="{%static 'js/jquery.waypoints.min.js'%}"></script>
+    <!-- CounterUp Plugin JavaScript-->
+    <script src="{%static 'js/jquery.counterup.js'%}"></script>
+    <!-- SmoothScroll Plugin JavaScript-->
+    <script src="{%static 'js/smoothscroll.min.js'%}"></script>
+    <!--Custom JavaScript for Klinik Template-->
+    <script src="{%static 'js/custom.js'%}"></script>
+    <script src="{% static 'sweetalert/sweetalert.min.js' %}"></script>    
+    <script type="text/javascript">
+    $(document).on('click','#submit',function(e){
+console.log("hhhhhhhhhhh")
+   swal ( "Success" ,  "succesfull!" ,  "success" )
+ }); 
+</script>
+</body>
+</html>

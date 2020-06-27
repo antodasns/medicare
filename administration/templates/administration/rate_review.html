@@ -1,0 +1,67 @@
+{%extends 'administration/user_layout.html'%}
+    {% load static %}
+
+{%block content%}<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Rate and review</h1>
+                
+            </div>
+        </div>
+
+    </div>
+     <form name="form" method="post" action="{% url 'administration:rate' id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+    <div class="theme-material-card"> <div id="doctor-page" class="layer-stretch">
+        <h1>Average Review : </h1>
+                         
+                                                       <table class="table table-hover">
+                                <thead>
+
+                                    <tr>
+                                        
+                                        <th><i class="fa fa-star"></i></th>
+                                        <th><i class="fa fa-star"></i><i class="fa fa-star"></i></th>
+                                        <th><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></th>
+                                        <th><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></th>
+                                        <th><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  
+
+                                    <tr>
+                                        
+                                        <td><input type="checkbox" id="" name="rate" value="1"></td>
+                                       <td><input type="checkbox" id="" name="rate" value="2"></td>
+                                       <td><input type="checkbox" id="" name="rate" value="3"></td>
+                                       <td><input type="checkbox" id="" name="rate" value="4"></td>
+                                       <td><input type="checkbox" id="" name="rate" value="5"></td>
+                                    </tr>
+                                 
+                                    
+                                </tbody>
+                            </table>
+
+
+                            
+
+
+                        
+                                    
+                                                    
+                                                        <textarea class="mdl-textfield__input" rows="5" id="sample-message-1" name="review" placeholder="click here to write review"></textarea>
+<input type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary" value="Submit"> 
+             </form>                                         <!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+   
+        </div>
+
+            </div>
+        </div><!-- End main Footer Section -->
+        <!-- Start Copyright Section -->
+        
+          {%endblock%}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Site Title -->
+    <title>Medicare Doctor Booking system</title>
+    <!-- Meta Description Tag -->
+    <meta name="Description" content="Klinik is a HTML5 & CSS3 responsive template">
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- Font Awesoeme Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'font-awesome/css/font-awesome.min.css'%}" />
+    <!-- Google web Font -->
+    <link rel="stylesheet" type="text/css" href="{%static 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600'%}">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <!-- Material Design Lite Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/material.min.css'%}" />
+    <!-- Material Design Select Field Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/mdl-selectfield.min.css'%}">
+    <!-- Owl Carousel Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}" />
+    <!-- Animate Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/animate.min.css'%}" />
+    <!-- Magnific Popup Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.css'%}" />
+    <!-- Flex Slider Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/flexslider.css'%}" />
+    <!-- Custom Main Stylesheet CSS -->
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    <!-- Start Header Section -->
+
+ <header id="header-transparent">
+        <div class="layer-stretch hdr-center">
+            <div class="row align-items-center">
+                <div class="col-10 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                    <div class="hdr-center-account text-left p-0">
+                        <a class="font-14 mr-4" href="{% url 'administration:login'%}"><i class="fa fa-sign-in" ></i>Login</a>
+                         <a class="font-14 mr-4" href="{% url 'administration:user_registration'%}"><i class="fa fa-sign-in" ></i>User Registration</a>
+                         <a class="font-14 mr-4" href="{% url 'administration:doc_outside_registration'%}"><i class="fa fa-sign-in" ></i>Doctor Registration</a>
+
+                        <!--<a class="font-14" data-toggle="modal" data-target="#registerpopup"><i class="fa fa-user-o"></i>Register</a>-->
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="hdr-center-logo text-center">
+                        <a href="index.html" class="d-inline-block"><img src="images/logo.png" alt=""></a>
+                    </div>
+                </div>
+               
+        
+    </header><!-- End Header Section -->
+    <div id="slider" class="slider-1 slider-2" >
+        <div class="flexslider slider-wrapper" >
+            <ul class="slides">     
+                <li>
+                    <div class="slider-info">
+                        <h1 class="animated fadeInDown">Medicare-Book Doctor online</h1>
+                     <h3>Book Appointment online with medicare</h3>
+                     <h3>Find right doctor closest to you</h3>
+                     <h3>consult experienced doctors near you</h3><br>
+                     <h2>Find Right doctors for you and your loved ones</h2>
+                     </div>
+                     <div class="slider-backgroung-image" style="background-image: url('/static/doctor-shortage.jpg');"></div>
+                     <!-- <img src="{%static 'doctor-shortage.jpg'%}" alt=""> -->
+                    
+                   
+                    <!-- Make an Appointment  Button -->
+                   
+                    <!-- Make an Appointment  Button -->
+                  <!--  <div class="slider-button slider-appointment">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect animated fadeInUp">Make An Appointment<i class="fa fa-flag-checkered"></i></a>
+                      
+                    </div> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Start Login Modal -->
+  <!-- End Register Modal -->
+<!-- Start Footer Section -->
+
+        <div id="copyright">
+            <div class="layer-stretch">
+                <!-- <div class="paragraph-medium paragraph-white">2017 © Pepdev ALL RIGHTS RESERVED.</div> -->
+            </div>
+        </div><!-- End of Copyright Section -->
+    </footer><!-- End of Footer Section -->
+
+    <!-- **********Included Scripts*********** -->
+
+    <!-- Jquery Library 2.1 JavaScript-->
+    <script src="{%static 'js/jquery-2.1.4.min.js'%}"></script>
+    <!-- Popper JavaScript-->
+    <script src="{%static 'js/popper.min.js'%}"></script>
+    <!-- Bootstrap Core JavaScript-->
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+    <!-- Material Design Lite JavaScript-->
+    <script src="{%static 'js/material.min.js'%}"></script>
+    <!-- Material Select Field Script -->
+    <script src="{%static 'js/mdl-selectfield.min.js'%}"></script>
+    <!-- Flexslider Plugin JavaScript-->
+    <script src="{%static 'js/jquery.flexslider.min.js'%}"></script>
+    <!-- Owl Carousel Plugin JavaScript-->
+    <script src="{%static 'js/owl.carousel.min.js'%}"></script>
+    <!-- Scrolltofixed Plugin JavaScript-->
+    <script src="{%static 'js/jquery-scrolltofixed.min.js'%}"></script>
+    <!-- Magnific Popup Plugin JavaScript-->
+    <script src="{%static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <!-- WayPoint Plugin JavaScript-->
+    <script src="{%static 'js/jquery.waypoints.min.js'%}"></script>
+    <!-- CounterUp Plugin JavaScript-->
+    <script src="{%static 'js/jquery.counterup.js'%}"></script>
+    <!-- SmoothScroll Plugin JavaScript-->
+    <script src="{%static 'js/smoothscroll.min.js'%}"></script>
+    <!--Custom JavaScript for Klinik Template-->
+    <script src="{%static 'js/custom.js'%}"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-93901876-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

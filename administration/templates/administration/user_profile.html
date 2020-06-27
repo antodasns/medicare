@@ -1,0 +1,47 @@
+{%extends 'administration/user_layout.html'%}
+    {% load static %}
+
+{%block content%}
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>User Details</h1>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="doctor-page" class="layer-stretch">
+         
+         <div class="theme-material-card" style="text-align: center;">
+                        <div class="sub-ttl">Details{{details.username}}</div>
+                     
+                          
+                           <h3>{{details.username}}</h3>
+                          <h3>{{details.email}}</h3>
+
+                          <h3>{{details.phone}}</h3>
+                          <h3>{{details.age}}</h3>
+                          <h3>{{details.gender}}</h3>
+                          <h3>{{details.bloodgroup}}</h3>
+                          <h3>{{details.address}}</h3>
+                            
+                           <a id="menu-home" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{% url 'administration:edit_user' details.login_id %}"><span class="badge badge-success">Edit</span></a>
+                           
+                           </select></h5><br>
+                       
+         
+                    </div>
+
+                </div>
+
+        </div>
+            </div>
+        </div>
+       {{script_tag|safe}}
+          {%endblock%}

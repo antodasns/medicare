@@ -1,0 +1,47 @@
+{%extends 'administration/user_layout2.html'%}
+    {% load static %}
+
+{%block content%}
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Payment</h1>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="doctor-page" class="layer-stretch">
+         <form name="form" method="post" action="{% url 'administration:user_payment'%}" enctype="multipart/form-data">
+            {% csrf_token %}
+         <div class="theme-material-card">
+                        <div class="sub-ttl">Booking</div>
+                     
+                           <input type="text" name="id" value="{{id}}" style="display: none">
+                            <h5>Consultaion Fees : &nbsp;<input type="text" name="consul_fee" value="{{consol_fee}}"></h5><br>
+                             <h5>Card Number &nbsp;<input type="text" name="cardno" value=""  autocomplete="off" id="card" required></h5><br>
+                             <h5>CVV &nbsp;<input type="text" name="cvv" value=""  autocomplete="off" id="cvv" required></h5><br>
+                            
+                            
+                           
+                           </select></h5><br>
+                       
+                         <div class="form-submit">
+                    <input type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary" id="submit" value="Make Payment">
+
+                </div>
+            </form>
+                    </div>
+
+                </div>
+
+        </div>
+            </div>
+        </div>
+       {{script_tag|safe}}
+          {%endblock%}

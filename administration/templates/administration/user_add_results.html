@@ -1,0 +1,73 @@
+{%extends 'administration/user_layout.html'%}
+    {% load static %}
+
+{%block content%}<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Add Results</h1>
+                
+            </div>
+        </div>
+
+    </div>
+   <!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+    <div id="doctor-page" class="layer-stretch">
+       <!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+
+        <div class="layer-wrapper text-center">
+            <div class="row">
+                <div class="col-lg-4">
+                     <br><br><br><br>
+                   
+                        <div class="sub-ttl">Add Results</div>
+                        <a href="{% url 'administration:user_add_results'%}" class="row blog-recent">
+                           
+                            <div class="col-8 blog-recent-post">
+                                <h3>Add Results</h3>
+                                
+                            </div>
+                        </a>
+                       
+                        <a href="{% url 'administration:user_view_results'%}" class="row blog-recent">
+                            
+                            <div class="col-8 blog-recent-post">
+                                <h3>View Results</h3>
+                           
+                            </div>
+                        </a>
+                       
+                        
+                   
+                    
+                </div>
+
+                       
+                            <div class="col-md-6">
+                                <form class="form" method="post" action="{% url 'administration:user_upload_results'%}" enctype="multipart/form-data">
+                     {% csrf_token %}
+                                <div class="theme-material-card p-3">
+                                    <div class="sub-ttl">Upload Result</div>
+                                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon">
+                                        <i class="fa fa-file"></i>
+                                        <input class="mdl-textfield__input" type="file" name="result_file">
+                                        
+                                    </div>
+                                     <input type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect button button-primary" value="Submit">
+                                   </form>
+                                </div>
+                            </div>
+                
+                </div>
+           
+        </div>
+    </div>
+         
+            </div>
+        </div><!-- End main Footer Section -->
+        <!-- Start Copyright Section -->
+        
+       {%endblock%}

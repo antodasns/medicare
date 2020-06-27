@@ -1,0 +1,57 @@
+{%extends 'administration/sidebar_layout.html'%}
+    {% load static %}
+
+{%block content%}
+
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Medical Shops</h1>
+               
+            </div>
+        </div>
+    </div><!-- End Page Title Section -->
+    <!-- Start Doctor List Section -->
+
+       
+
+               <!--Form-->
+             <div class="theme-material-card">
+                            <p class="font-16">Medical Shops</p>
+                            
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Phone</th>
+                                        <th>Pincode</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for x in details %}
+                                        
+
+                                   
+                                   
+                                    <tr>
+                                        <td>{{forloop.counter}}</td>
+                                        <td>{{x.name}}</td>
+                                        <td>{{x.address}}</td>
+                                        <td>{{x.phone}}</td>
+                                        <td>{{x.pincode}}</td>
+                                        <td>Edit</td>
+                                        <td>Delete</td>
+                                    </tr>
+                                      {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+            </div>
+        </div>
+    </div>
+    {%endblock%}

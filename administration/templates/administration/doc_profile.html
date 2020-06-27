@@ -1,0 +1,51 @@
+{%extends 'administration/user_layout.html'%}
+    {% load static %}
+
+{%block content%}
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<!-- End Header -->
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <h1>Doctors Details</h1>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="doctor-page" class="layer-stretch">
+         
+         <div class="theme-material-card" style="text-align: center;">
+                        <div class="sub-ttl">Details</div>
+                     
+                           <input type="text" name="id" value="{{id}}" style="display: none">
+                           <img src="{{details.photo.url}}"  style="width:250px;height: 250px"> <br>
+                            <h5>Name: &nbsp;<input type="text" name="consul_fee" value="{{details.username}}" disabled></h5><br>
+                            <h5>Department: &nbsp;<input type="text" name="consul_fee" value="{{details.specialization}}" disabled></h5><br>
+                            <h5>Phone no: &nbsp;<input type="text" name="consul_fee" value="{{details.phone}}" disabled></h5><br>
+                            <h5>Consultation Fee: &nbsp;<input type="text" name="consul_fee" value="{{details.consolt_fee}}" disabled></h5><br>
+                            <h5>Rating and Review:</h5><br>
+                            {% for x in rate %}
+                           
+                            <h6>{{x.rating}} Star</h6>
+                            <h6>{{x.review}}</h6>
+                            
+                           
+                            
+                           {% endfor %}
+                           
+                           </select></h5><br>
+                       
+         
+                    </div>
+
+                </div>
+
+        </div>
+            </div>
+        </div>
+       {{script_tag|safe}}
+          {%endblock%}
