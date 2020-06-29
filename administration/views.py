@@ -418,7 +418,7 @@ def doctor_view_result(request,id):
 
 @login_required(login_url='/user_login')
 def user_view_doctors(request):
-	details=doctor_details.objects.all().order_by('-id')
+	details=doctor_details.objects.all().order_by('-id').filter(approval="yes")
 	user_detail=user_details.objects.get(login_id=request.user.id)
 
 	return render(request,'administration/user_view_doctors.html',{'details':details,'user_detail':user_detail})
